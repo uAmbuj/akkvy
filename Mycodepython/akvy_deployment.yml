@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akvy1
+spec:
+  selector:
+    matchLabels:
+      app: akvy1
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: akvy1
+    spec:
+      containers:
+      - name: akvy1
+        image: uambuj/movie_akvy
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+
+      
